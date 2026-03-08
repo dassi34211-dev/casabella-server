@@ -29,3 +29,9 @@
 * **מה עשינו?** התקנו את ספריית Nodemon המאפשרת רענון אוטומטי של השרת בכל שמירת קובץ, ועדכנו את ה-scripts ב-package.json.
 * **קבצים מרכזיים:**
   * `package.json` - הוספת פקודת `npm run dev` ושינוי ה-main ל-app.js.
+  ### 6. User Model and Signup Logic
+* **מה עשינו?** יצרנו מודל משתמש עם הצפנת סיסמה מאובטחת.
+* **קבצים מרכזיים:**
+  * `models/user.model.js` - הגדרת שדות המשתמש ובדיקות Joi.
+  * `controllers/user.controller.js` - לוגיקת הרשמה ושימוש ב-bcrypt להצפנה.
+  
