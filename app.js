@@ -3,6 +3,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db'); 
 const productRouter = require('./routes/product.route');
+const userRouter = require('./routes/user.route');
 
 // טעינת משתני הסביבה מהקובץ .env
 dotenv.config();
@@ -16,8 +17,10 @@ const app = express();
 app.use(cors()); 
 app.use(express.json()); 
 
+
 // חיבור הראוטר של המפות לשרת!
 app.use('/api/products', productRouter);
+app.use('/api/users', userRouter);
 
 // נתיב בדיקה
 app.get('/', (req, res) => {

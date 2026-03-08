@@ -34,4 +34,9 @@
 * **קבצים מרכזיים:**
   * `models/user.model.js` - הגדרת שדות המשתמש ובדיקות Joi.
   * `controllers/user.controller.js` - לוגיקת הרשמה ושימוש ב-bcrypt להצפנה.
+  ### 7. User Routes and Signup Integration
+* **מה עשינו?** חיברנו את נתיבי המשתמשים לשרת ובדקנו הרשמה מוצלחת.
+* **קבצים מרכזיים:**
+  * `routes/user.route.js` - הגדרת נתיב ה-register.
+  * עדכון `app.js` - חיבור הראוטר של המשתמשים.
   
