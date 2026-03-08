@@ -1,11 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const { getAllProducts, addProduct } = require('../controllers/product.controller');
-const { auth, admin } = require('../middleware/auth'); // ייבוא המאבטחים
+const { 
+    getAllProducts, 
+    addProduct, 
+    updateProduct, 
+    deleteProduct 
+} = require('../controllers/product.controller');
+const { auth, admin } = require('../middleware/auth');
+const upload = require('../middleware/upload'); // <--- 1. ייבוא ה-Middleware החדש כאן
 
-// GET - כולם יכולים לראות
+// 1. קבלת כל המוצרים - פתוח לכולם
 router.get('/', getAllProducts);
 
-// POST - רק מנהל מחובר יכול להוסיף מוצר
-router.post('/', [auth, admin], addProduct);
+// 2. הוספת מוצר חדש עם תמונה - רק מנהל מחובר
+// הוספנו את upload.single('image') לרשימת ה"מאבטחים"
+router.post('/', [auth, admin, upload.single('image')], addProduct);
+
+// 3. עדכון מוצר קיים (PUT) - רק מנהל מחובר
+router.put('/:id', [auth, admin], updateProduct);
+
+// 4. מחיקת מוצר (DELETE) - רק מנהל מחובר
+router.delete('/:id', [auth, admin], deleteProduct);
+
 module.exports = router;
