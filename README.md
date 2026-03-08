@@ -39,4 +39,11 @@
 * **קבצים מרכזיים:**
   * `routes/user.route.js` - הגדרת נתיב ה-register.
   * עדכון `app.js` - חיבור הראוטר של המשתמשים.
-  
+ ### 8. Authentication & Authorization Middleware
+* **מה עשינו?** יצרנו שכבת הגנה (Middleware) שבודקת את ה-JWT Token של המשתמש לפני גישה לנתיבים מאובטחים.
+* **קבצים מרכזיים:**
+  * `middleware/auth.js` - פונקציות לאימות טוקן ובדיקת הרשאת מנהל (Admin).
+  * `routes/product.route.js` - הגנה על נתיב ה-POST כך שרק מנהל מחובר יוכל להוסיף מוצרים.
+
+### 9. Admin Authorization Success
+* **מה עשינו?** בדקנו את מערכת ההרשאות ב-Thunder Client. הגדרנו משתמש כמנהל ב-MongoDB Compass ואימתנו שהשרת מאפשר הוספת מוצרים רק כאשר נשלח טוקן תקין ב-Headers.

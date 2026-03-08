@@ -1,14 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
-// ייבוא הפונקציות שיצרנו בקונטרולר
 const { getAllProducts, addProduct } = require('../controllers/product.controller');
+const { auth, admin } = require('../middleware/auth'); // ייבוא המאבטחים
 
-// הגדרת הנתיבים (Routes)
-// בקשת GET - מפעילה את הפונקציה ששולפת את כל המפות
+// GET - כולם יכולים לראות
 router.get('/', getAllProducts);
 
-// בקשת POST - מפעילה את הפונקציה שמוסיפה מפה חדשה
-router.post('/', addProduct);
-
+// POST - רק מנהל מחובר יכול להוסיף מוצר
+router.post('/', [auth, admin], addProduct);
 module.exports = router;
