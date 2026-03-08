@@ -1,9 +1,13 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const connectDB = require('./config/db'); 
 
 // טעינת משתני הסביבה מהקובץ .env
 dotenv.config();
+
+// הפעלת פונקציית החיבור למסד הנתונים
+connectDB(); 
 
 const app = express();
 
