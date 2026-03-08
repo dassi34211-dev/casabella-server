@@ -17,6 +17,10 @@ const app = express();
 app.use(cors()); 
 app.use(express.json()); 
 
+// הפתיחה של תיקיית התמונות לציבור (בשביל ה-React!)
+app.use('/uploads', express.static('uploads'));
+
+
 
 // חיבור הראוטר של המפות לשרת!
 app.use('/api/products', productRouter);
