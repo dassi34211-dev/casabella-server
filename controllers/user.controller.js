@@ -42,26 +42,23 @@ const login = async (req, res) => {
         const validPassword = await bcrypt.compare(req.body.password, user.password);
         if (!validPassword) return res.status(400).json({ message: "אימייל או סיסמה שגויים" });
 
-        // 4. יצירת טוקן (JWT) - ה"מפתח" של המשתמש
-        // הטוקן מכיל את ה-ID שלו ואם הוא מנהל
+        // 4. בדיקה אם המשתמש הוא המנהל המיוחד שלנו (דסי)
+        const adminEmail = "dassi34211@gmail.com"; 
+        const isActuallyAdmin = user.email === adminEmail || user.isAdmin;
+
+        // יצירת טוקן (JWT) - הוספנו את הבדיקה החדשה לתוך הטוקן
         const token = jwt.sign(
-            { _id: user._id, isAdmin: user.isAdmin },
-            process.env.JWT_SECRET || 'mysecretkey' // נשתמש במפתח סודי מה-.env
+            { _id: user._id, isAdmin: isActuallyAdmin }, 
+            process.env.JWT_SECRET || 'mysecretkey'
         );
 
-        // 5. שליחת הטוקן חזרה ללקוח
+        // 5. שליחת הטוקן חזרה ללקוח עם ההרשאות המעודכנות
         res.header('x-auth-token', token).json({
             token: token,
             user: {
                 _id: user._id,
                 name: user.name,
                 email: user.email,
-                isAdmin: user.isAdmin
+                isAdmin: isActuallyAdmin // מחזירים אמת אם זה המייל שלך
             }
         });
-    } catch (error) {
-        res.status(500).json({ message: "שגיאה בהתחברות", error: error.message });
-    }
-};
-
-module.exports = { register, login };
