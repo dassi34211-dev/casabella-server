@@ -34,12 +34,17 @@ const addProduct = async (req, res) => {
 // 3. פעולת Update (PUT) - עדכון מפה קיימת לפי ID
 const updateProduct = async (req, res) => {
     try {
-        // בודקים אם הנתונים החדשים תקינים (למשל שהמחיר לא שלילי)
-        const { error } = validateProduct(req.body);
-        if (error) return res.status(400).json({ message: error.details[0].message });
+        // 1. אם העלו תמונה חדשה בעריכה, נוסיף אותה ל-body
+        if (req.file) {
+            req.body.image = req.file.path;
+        }
 
-        // מוצאים ומעדכנים. { new: true } גורם לזה להחזיר את המוצר המעודכן ולא את הישן
-        const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        // 2. עדכון המוצר - כאן אנחנו משתמשים ב-$set כדי לעדכן רק מה שנשלח
+        const product = await Product.findByIdAndUpdate(
+            req.params.id, 
+            { $set: req.body }, 
+            { new: true, runValidators: true }
+        );
 
         if (!product) return res.status(404).json({ message: "המוצר לא נמצא" });
         res.json(product);
