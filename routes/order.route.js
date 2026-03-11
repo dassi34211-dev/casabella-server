@@ -1,11 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const { addOrderItems } = require('../controllers/order.controller');
 
-// התיקון: אנחנו מייבאים את 'auth' ולא את 'protect'
+// הוספנו את getMyOrders לייבוא מהקונטרולר
+const { addOrderItems, getMyOrders } = require('../controllers/order.controller');
 const { auth } = require('../middleware/auth'); 
 
-// התיקון: משתמשים ב-'auth' בתור המגן
+// הראוט הקיים ליצירת הזמנה
 router.post('/', auth, addOrderItems);
+
+// --- הראוט החדש שלנו! ---
+// הכתובת תהיה: GET /api/orders/myorders
+router.get('/myorders', auth, getMyOrders);
 
 module.exports = router;
