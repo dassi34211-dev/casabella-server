@@ -1,17 +1,16 @@
 const Order = require('../models/Order.models');
 
-// פונקציה לשמירת הזמנה חדשה (מה שכבר עשינו והוא עובד מושלם)
+// פונקציה לשמירת הזמנה חדשה
 const addOrderItems = async (req, res) => {
     try {
         const { orderItems, shippingAddress, totalPrice } = req.body;
-
         if (orderItems && orderItems.length === 0) {
             return res.status(400).json({ message: 'אין פריטים בהזמנה' });
         }
 
         const order = new Order({
             orderItems,
-            user: req.user._id, // מגיע מה-middleware של ה-auth
+            user: req.user._id,
             shippingAddress,
             totalPrice
         });
@@ -23,11 +22,9 @@ const addOrderItems = async (req, res) => {
     }
 };
 
-// --- הפונקציה החדשה שלנו! מביאה רק את ההזמנות של המשתמש המחובר ---
+// מביאה רק את ההזמנות של המשתמש המחובר (עבור דף "ההזמנות שלי")
 const getMyOrders = async (req, res) => {
     try {
-        // אנחנו מבקשים ממונגו: "תביא לי את כל ההזמנות שהשדה user שלהן תואם למי שעכשיו מחובר"
-        // הוספתי גם sort שיסדר את זה מההזמנה החדשה ביותר לישנה ביותר (-1)
         const orders = await Order.find({ user: req.user._id }).sort({ createdAt: -1 });
         res.json(orders);
     } catch (error) {
@@ -35,5 +32,15 @@ const getMyOrders = async (req, res) => {
     }
 };
 
-// לא לשכוח לייצא גם את הפונקציה החדשה!
-module.exports = { addOrderItems, getMyOrders };
+// *** חדש למנהל! *** מביאה את כל ההזמנות של כל המשתמשים
+const getAllOrders = async (req, res) => {
+    try {
+        // .populate('user', 'name email') - מושך גם את השם והאימייל של הלקוח מתיקיית המשתמשים
+        const orders = await Order.find({}).populate('user', 'name email').sort({ createdAt: -1 });
+        res.json(orders);
+    } catch (error) {
+        res.status(500).json({ message: 'שגיאה בשליפת כל ההזמנות', error: error.message });
+    }
+};
+
+module.exports = { addOrderItems, getMyOrders, getAllOrders };

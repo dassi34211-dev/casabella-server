@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const { addOrderItems, getMyOrders, getAllOrders } = require('../controllers/order.controller');
+const { auth, admin } = require('../middleware/auth'); // הוספנו את ה-admin middleware
 
-// הוספנו את getMyOrders לייבוא מהקונטרולר
-const { addOrderItems, getMyOrders } = require('../controllers/order.controller');
-const { auth } = require('../middleware/auth'); 
-
-// הראוט הקיים ליצירת הזמנה
+// ראוט ליצירת הזמנה (כל משתמש מחובר)
 router.post('/', auth, addOrderItems);
 
-// --- הראוט החדש שלנו! ---
-// הכתובת תהיה: GET /api/orders/myorders
+// ראוט להזמנות אישיות (כל משתמש מחובר)
 router.get('/myorders', auth, getMyOrders);
+
+// *** ראוט חדש למנהל! ***
+// רק משתמש שהוא גם מחובר (auth) וגם מנהל (admin) יוכל לגשת לכאן
+router.get('/', auth, admin, getAllOrders);
 
 module.exports = router;
