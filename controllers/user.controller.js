@@ -17,10 +17,21 @@ const register = async (req, res) => {
 
         await user.save();
 
-        res.status(201).json({
-            _id: user._id,
-            name: user.name,
-            email: user.email
+        // --- תיקון: עכשיו גם בהרשמה אנחנו מייצרים טוקן (עם השם!) ---
+        const token = jwt.sign(
+            { _id: user._id, name: user.name, isAdmin: false }, 
+            process.env.JWT_SECRET || 'mysecretkey'
+        );
+
+        // שולחים לריאקט את הטוקן כדי שיחבר את המשתמש מיד
+        res.header('x-auth-token', token).status(201).json({
+            token: token,
+            user: {
+                _id: user._id,
+                name: user.name,
+                email: user.email,
+                isAdmin: false
+            }
         });
     } catch (error) {
         res.status(500).json({ message: "שגיאה ברישום משתמש", error: error.message });
@@ -43,8 +54,9 @@ const login = async (req, res) => {
         const adminEmail = "dassi34211@gmail.com"; 
         const isActuallyAdmin = user.email === adminEmail || user.isAdmin;
 
+        // --- תיקון: הוספנו את השם (name: user.name) לתוך הטוקן! ---
         const token = jwt.sign(
-            { _id: user._id, isAdmin: isActuallyAdmin }, 
+            { _id: user._id, name: user.name, isAdmin: isActuallyAdmin }, 
             process.env.JWT_SECRET || 'mysecretkey'
         );
 

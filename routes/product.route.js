@@ -16,9 +16,8 @@ router.get('/', getAllProducts);
 // הוספנו את upload.single('image') לרשימת ה"מאבטחים"
 router.post('/', [auth, admin, upload.single('image')], addProduct);
 
-// 3. עדכון מוצר קיים (PUT) - רק מנהל מחובר
-router.put('/:id', [auth, admin], updateProduct);
-
+// 3. עדכון מוצר קיים (PUT) - הוספנו את המולטר כדי שיידע לקרוא את הנתונים החדשים
+router.put('/:id', [auth, admin, upload.single('image')], updateProduct);
 // 4. מחיקת מוצר (DELETE) - רק מנהל מחובר
 router.delete('/:id', [auth, admin], deleteProduct);
 
