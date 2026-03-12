@@ -1,0 +1,221 @@
+[{
+  "_id": {
+    "$oid": "69b19113030d75e31a7fd7fa"
+  },
+  "user": {
+    "$oid": "69b1898b030d75e31a7fd7e9"
+  },
+  "orderItems": [
+    {
+      "name": "מפה אורגנזה ובסיס אבן עגול",
+      "quantity": 1,
+      "price": 300,
+      "product": {
+        "$oid": "69b067fe736cfa8a0768c29f"
+      },
+      "_id": {
+        "$oid": "69b19113030d75e31a7fd7fb"
+      }
+    },
+    {
+      "name": "לינן קפה מרובע",
+      "quantity": 1,
+      "price": 250,
+      "product": {
+        "$oid": "69b067e8736cfa8a0768c29d"
+      },
+      "_id": {
+        "$oid": "69b19113030d75e31a7fd7fc"
+      }
+    },
+    {
+      "name": "ונציה כסף מרובע",
+      "quantity": 1,
+      "price": 200,
+      "product": {
+        "$oid": "69b0673078ca7af27440bd4a"
+      },
+      "_id": {
+        "$oid": "69b19113030d75e31a7fd7fd"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "fullName": "דסי כהנא",
+    "city": "בני ברק",
+    "street": "צבי הרלינג 19",
+    "phone": "0533134211"
+  },
+  "totalPrice": 750,
+  "status": "Pending",
+  "createdAt": {
+    "$date": "2026-03-11T15:58:11.886Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T15:58:11.886Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b1fc8afe0871251f8d24b8"
+  },
+  "user": {
+    "$oid": "69b1fc50fe0871251f8d24b4"
+  },
+  "orderItems": [
+    {
+      "name": "מפה אורגנזה ובסיס אבן עגול",
+      "quantity": 1,
+      "price": 300,
+      "product": {
+        "$oid": "69b067fe736cfa8a0768c29f"
+      },
+      "_id": {
+        "$oid": "69b1fc8afe0871251f8d24b9"
+      }
+    },
+    {
+      "name": "ונציה כסף מרובע",
+      "quantity": 1,
+      "price": 200,
+      "product": {
+        "$oid": "69b0673078ca7af27440bd4a"
+      },
+      "_id": {
+        "$oid": "69b1fc8afe0871251f8d24ba"
+      }
+    },
+    {
+      "name": "רקמת עלים זהב",
+      "quantity": 1,
+      "price": 230,
+      "product": {
+        "$oid": "69b1538079a46722426ef988"
+      },
+      "_id": {
+        "$oid": "69b1fc8afe0871251f8d24bb"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "fullName": "דסי כהנא",
+    "city": "בני ברק",
+    "street": "צבי הרלינג 19",
+    "phone": "0533134211"
+  },
+  "totalPrice": 730,
+  "status": "Pending",
+  "createdAt": {
+    "$date": "2026-03-11T23:36:42.253Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T23:36:42.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b1fd13fe0871251f8d24d9"
+  },
+  "user": {
+    "$oid": "69b1fcedfe0871251f8d24d7"
+  },
+  "orderItems": [
+    {
+      "name": "מפה אורגנזה ובסיס אבן עגול",
+      "quantity": 1,
+      "price": 300,
+      "product": {
+        "$oid": "69b067fe736cfa8a0768c29f"
+      },
+      "_id": {
+        "$oid": "69b1fd13fe0871251f8d24da"
+      }
+    },
+    {
+      "name": "לינן קפה מרובע",
+      "quantity": 1,
+      "price": 250,
+      "product": {
+        "$oid": "69b067e8736cfa8a0768c29d"
+      },
+      "_id": {
+        "$oid": "69b1fd13fe0871251f8d24db"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "fullName": "בדיקה",
+    "city": "בני ברק",
+    "street": "צבי הרלינג 19",
+    "phone": "0533134211"
+  },
+  "totalPrice": 550,
+  "status": "Pending",
+  "createdAt": {
+    "$date": "2026-03-11T23:38:59.733Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T23:38:59.733Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2e7bdfe0871251f8d2508"
+  },
+  "user": {
+    "$oid": "69b2e798fe0871251f8d2504"
+  },
+  "orderItems": [
+    {
+      "name": "ונציה כסף מרובע",
+      "quantity": 1,
+      "price": 200,
+      "product": {
+        "$oid": "69b0673078ca7af27440bd4a"
+      },
+      "_id": {
+        "$oid": "69b2e7bdfe0871251f8d2509"
+      }
+    },
+    {
+      "name": "מפה גבעולים מוקה עגול",
+      "quantity": 1,
+      "price": 300,
+      "product": {
+        "$oid": "69b0681d736cfa8a0768c2a3"
+      },
+      "_id": {
+        "$oid": "69b2e7bdfe0871251f8d250a"
+      }
+    },
+    {
+      "name": "מפה אורגנזה ובסיס אבן עגול",
+      "quantity": 1,
+      "price": 300,
+      "product": {
+        "$oid": "69b067fe736cfa8a0768c29f"
+      },
+      "_id": {
+        "$oid": "69b2e7bdfe0871251f8d250b"
+      }
+    }
+  ],
+  "shippingAddress": {
+    "fullName": "דסי כהנא",
+    "city": "בני ברק",
+    "street": "צבי הרלינג 19",
+    "phone": "0533134211"
+  },
+  "totalPrice": 800,
+  "status": "Pending",
+  "createdAt": {
+    "$date": "2026-03-12T16:20:13.886Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:20:13.886Z"
+  },
+  "__v": 0
+}]

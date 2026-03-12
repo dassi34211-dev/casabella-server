@@ -1,0 +1,128 @@
+[{
+  "_id": {
+    "$oid": "69ad4fe375ba6e35315f7205"
+  },
+  "name": "דסי",
+  "email": "dassi@example.com",
+  "password": "$2b$10$E3r/s5U01Ezx6wwcsNQrRun7kpSTG3oZ3q1gVLg4g8R2m6JIdmigu",
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2026-03-08T10:30:59.634Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-08T10:30:59.634Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b052f2205b368a4e3b9b38"
+  },
+  "name": "Admin CasaBella",
+  "email": "admin@casa.com",
+  "password": "$2b$10$aTnbAo3VWTtAmufEKC5XBO/HGhvroj7t41IvNsRtffkUMY9aUWelK",
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2026-03-10T17:20:51.096Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-10T17:20:51.096Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b065e878ca7af27440bd41"
+  },
+  "name": "דסי המנהלת",
+  "email": "dassi34211@gmail.com",
+  "password": "$2b$10$LI7wKMjlc9P.mu1L.iKkQOOYER5MCN1LpMRonoe/h7.BkcXd8SzZu",
+  "isAdmin": true,
+  "createdAt": {
+    "$date": "2026-03-10T18:41:44.946Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-10T18:41:44.946Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b083ed1aaede6148531572"
+  },
+  "name": "חני",
+  "email": "chani@gmail.com",
+  "password": "$2b$10$Pa0qGVngNflPLamJu/le6.pMchiPArVnMLQVlvkUIhLwg8SjFmJbi",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2026-03-10T20:49:49.643Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-10T20:49:49.643Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b1898b030d75e31a7fd7e9"
+  },
+  "name": "בדיקה",
+  "email": "b@gmail.com",
+  "password": "$2b$10$M/L2MT25hUnX8NNzyQd0o.TqfLKXrnUOplfIrzs2ok7OK1yMD2MN6",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2026-03-11T15:26:03.667Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T15:26:03.667Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b1fc50fe0871251f8d24b4"
+  },
+  "name": "אוריאל",
+  "email": "u@gmail.com",
+  "password": "$2b$10$eu1nktrjPfdkA/eRh8Fr5u1ElnK4ZDhpsCV9sOBTsmlrQNuhMTWCa",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2026-03-11T23:35:44.406Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T23:35:44.406Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b1fcedfe0871251f8d24d7"
+  },
+  "name": "תמר",
+  "email": "t@gmail.com",
+  "password": "$2b$10$xpDlM.Vo15b3l99acsB4A.x4AlWw7WV6DiEQl3iavd6mrRhOjuCj2",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2026-03-11T23:38:21.924Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-11T23:38:21.924Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69b2e798fe0871251f8d2504"
+  },
+  "name": "יהודית",
+  "email": "y@gmail.com",
+  "password": "$2b$10$WT7zjrVLmpi6sU4Ba7FurenG0KqcGNvJJDCLdSsMwHTG6FyprWNAW",
+  "isAdmin": false,
+  "createdAt": {
+    "$date": "2026-03-12T16:19:36.874Z"
+  },
+  "updatedAt": {
+    "$date": "2026-03-12T16:19:36.874Z"
+  },
+  "__v": 0
+}]
